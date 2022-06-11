@@ -1,0 +1,49 @@
+<app-header titulo="Parte diario"></app-header>
+<ion-content class="ion-padding">
+  <form class="formulario">
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-input type="date" [(ngModel)]="fecha" name="fecha"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hora de entrada</ion-label>
+      <ion-input type="time" [(ngModel)]="horaEntrada" name="horaEntrada"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hora de salida</ion-label>
+      <ion-input type="time" [(ngModel)]="horaSalida" name="horaEntrada"></ion-input>
+    </ion-item>
+
+    <ion-radio-group allow-empty-selection [(ngModel)]="almorzar" name="almorzar">
+    <ion-item>
+      <ion-label>Almorzar</ion-label>
+      <ion-radio mode="md" value="true"></ion-radio>
+    </ion-item>
+    </ion-radio-group>
+
+    <ion-radio-group allow-empty-selection [(ngModel)]="comer" name="comer">
+    <ion-item>
+      <ion-label>Comer</ion-label>
+      <ion-radio mode="md" value="true"></ion-radio>
+    </ion-item>
+    </ion-radio-group>
+
+    <ion-radio-group allow-empty-selection [(ngModel)]="merendar" name="merendar">
+    <ion-item>
+      <ion-label>Merendar</ion-label>
+      <ion-radio value="true" mode="md"></ion-radio>
+    </ion-item>
+    </ion-radio-group>
+
+    <div class="ion-text-center"
+         style="padding-top: 10px"
+         (click)="submit()">
+      <ion-button color="tertiary">Enviar</ion-button>
+    </div>
+
+
+  </form>
+</ion-content>
+

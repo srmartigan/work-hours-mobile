@@ -7,9 +7,29 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'parte',
+    loadChildren: () => import('./parte/parte.module').then( m => m.PartePageModule)
+  },
+  {
+    path: 'listado',
+    loadChildren: () => import('./listado/listado.module').then( m => m.ListadoPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'botonera-inicio',
+    loadChildren: () => import('./components/botonera-inicio/botonera-inicio.module').then( m => m.BotoneraInicioPageModule)
+  },
+  {
+    path: 'parte',
+    loadChildren: () => import('./parte/parte.module').then( m => m.PartePageModule)
+  },
+  {
+    path: 'listado',
+    loadChildren: () => import('./listado/listado.module').then( m => m.ListadoPageModule)
   },
 ];
 

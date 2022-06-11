@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import {BotoneraInicioPageModule} from '../components/botonera-inicio/botonera-inicio.module';
 
 
 @NgModule({
@@ -12,7 +13,11 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    BotoneraInicioPageModule
+  ],
+  exports: [
+    HomePage
   ],
   declarations: [HomePage]
 })
