@@ -1,59 +1,31 @@
 <app-header titulo="Listado"></app-header>
 
 <ion-content>
-
-<!--  <ion-accordion-group>-->
-
-<!--    <ion-accordion [value]="parte.id" *ngFor="let parte of parteDiario">-->
-<!--      <ion-item slot="header">-->
-<!--        <ion-label color="tertiary">{{"Fecha: " + parte.fecha + " - " + parte.TotalHoras + " Horas" }}</ion-label>-->
-<!--      </ion-item>-->
-
-<!--      <ion-list slot="content">-->
-<!--        <ion-item>-->
-<!--          <ion-label color="danger">{{'Hora de entrada: ' + parte.HoraEntrada}}</ion-label>-->
-<!--        </ion-item>-->
-<!--        <ion-item>-->
-<!--          <ion-label color="danger">{{'Hora de salida: ' + parte.HoraSalida}}</ion-label>-->
-<!--        </ion-item>-->
-<!--        <ion-item>-->
-<!--          <ion-label color="danger">{{'Total horas: ' + parte.TotalHoras}}</ion-label>-->
-<!--        </ion-item>-->
-<!--        <ion-item>-->
-<!--          <ion-label color="danger">Almorzar: {{parte.almuerzo === '0' ? 'No' : 'Si'}}</ion-label>-->
-<!--        </ion-item>-->
-<!--        <ion-item>-->
-<!--          <ion-label color="danger">Comida: {{parte.comida === '0' ? 'No' : 'Si'}}</ion-label>-->
-<!--        </ion-item>-->
-<!--        <ion-item>-->
-<!--          <ion-label color="danger">Merienda: {{parte.merienda === '0' ? 'No' : 'Si'}}</ion-label>-->
-<!--        </ion-item>-->
-<!--      </ion-list>-->
-<!--    </ion-accordion>-->
-<!--  </ion-accordion-group>-->
-
+  <ion-item>
+    <ion-title class="ion-text-center"><strong>HORAS DEL MES {{meses[mes]}}</strong></ion-title>
+  </ion-item>
   <ion-grid>
-    <ion-row class="table">
+    <ion-row class="table ion-text-center ion-align-items-center">
       <ion-col size="1">
-        #
+        <small><strong>#</strong></small>
       </ion-col>
       <ion-col size="3">
-        Fecha
+        <small><strong>Fecha</strong></small>
       </ion-col>
       <ion-col size="2">
-        H/E
+        <small><strong>H/E</strong></small>
       </ion-col>
       <ion-col size="2">
-        H/S
+        <small><strong>H/S</strong></small>
       </ion-col>
       <ion-col size="2">
-        T/H
+        <small><strong>T/H</strong></small>
       </ion-col>
       <ion-col size="2">
-        Editar
+        <small><strong>Editar</strong></small>
       </ion-col>
     </ion-row>
-    <ion-row class="table" *ngFor = "let parte of parteDiario ; index as i">
+    <ion-row class="table ion-text-center ion-align-items-center" *ngFor = "let parte of parteDiario ; index as i">
       <ion-col size="1">
         <small>{{i+1}}</small>
       </ion-col>
