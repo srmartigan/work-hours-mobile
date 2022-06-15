@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+/* eslint-disable @typescript-eslint/naming-convention */
+import {Component, OnInit} from '@angular/core';
+import {ParteDiario} from '../interfaces/parte-diario';
 
 @Component({
   selector: 'app-parte',
@@ -16,34 +18,39 @@ export class PartePage implements OnInit {
   merendar: boolean;
 
   constructor() {
-    this.almorzar = false;
-    this.comer = false;
-    this.merendar = false;
+
   }
 
   ngOnInit() {
   }
 
   submit() {
-    this.comprobarBooleanNoUndefined();
-    console.log(this.fecha);
-    console.log(this.horaEntrada);
-    console.log(this.horaSalida);
-    console.log(this.almorzar);
-    console.log(this.comer);
-    console.log(this.merendar);
+
+    // TODO: llamar al servicio de http para guardar el parte en la base de datos
+    const parteDiario: ParteDiario = this.obtenerParteDiario();
+    console.log(parteDiario);
+
   }
 
-  comprobarBooleanNoUndefined() {
-    if (this.almorzar === undefined) {
-      this.almorzar = false;
+  //convertir boolean a string
+  booleanToString(dato: boolean): string {
+    if (!dato) {
+      return '0';
     }
-    if (this.comer === undefined) {
-      this.comer = false;
-    }
-    if (this.merendar === undefined) {
-      this.merendar = false;
-    }
+    return '1';
+  }
+
+  private obtenerParteDiario(): ParteDiario {
+
+    return {
+      userId: '1', //TODO: cambiar por el id del usuario
+      fecha: this.fecha.toString(),
+      HoraEntrada: this.horaEntrada,
+      HoraSalida: this.horaSalida,
+      almuerzo: this.booleanToString(this.almorzar),
+      comida: this.booleanToString(this.comer),
+      merienda: this.booleanToString(this.merendar)
+    };
   }
 
 }

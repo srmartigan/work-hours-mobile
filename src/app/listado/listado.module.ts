@@ -9,6 +9,7 @@ import { ListadoPageRoutingModule } from './listado-routing.module';
 import { ListadoPage } from './listado.page';
 import {ComponentsModule} from '../components/components.module';
 
+
 @NgModule({
     imports: [
         CommonModule,
@@ -17,6 +18,7 @@ import {ComponentsModule} from '../components/components.module';
         ListadoPageRoutingModule,
         ComponentsModule
     ],
-  declarations: [ListadoPage]
+  declarations: [ListadoPage],
+
 })
 export class ListadoPageModule {}
