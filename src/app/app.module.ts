@@ -8,18 +8,20 @@ import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {BotoneraInicioPageModule} from './components/botonera-inicio/botonera-inicio.module';
 import {HomePageModule} from './home/home.module';
+import {ComponentsModule} from "./components/components.module";
 
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    BotoneraInicioPageModule,
-    HomePageModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(),
+        AppRoutingModule,
+        BotoneraInicioPageModule,
+        HomePageModule,
+        HttpClientModule,
+        ComponentsModule
+    ],
   providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
 })
